@@ -1,3 +1,3 @@
 # Vignette-Shader
 URP supported  Vignette Shader
-<img src="screenshot.jpeg" alt="Screenshot" width="600"/>
+<img src="screenshot.jpeg" alt="Screenshot" width="300"/>
