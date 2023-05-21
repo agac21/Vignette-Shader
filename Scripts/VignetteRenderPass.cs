@@ -1,6 +1,8 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.UIElements;
 
 internal class VignetteRenderPass : ScriptableRenderPass
 {
@@ -22,6 +24,11 @@ internal class VignetteRenderPass : ScriptableRenderPass
 
     public override void Execute(ScriptableRenderContext context, ref RenderingData renderingData)
     {
+        if (_vignetteMaterial == null)
+        {
+            return;
+        }
+
         if (!renderingData.cameraData.camera.CompareTag("MainCamera")) return;
         var cmd = CommandBufferPool.Get("VignettePass");
         Blit(cmd, source, destination.Identifier(), _vignetteMaterial);

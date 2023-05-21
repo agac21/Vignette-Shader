@@ -10,7 +10,7 @@ public class VignetteRenderFeature : ScriptableRendererFeature
 
     public override void Create()
     {
-        _vignetteRenderPass = new VignetteRenderPass(settings.vignetteMaterial);
+        _vignetteRenderPass = new VignetteRenderPass(settings.VignetteMaterial);
         _vignetteRenderPass.renderPassEvent = settings.Event;
         settings.ApplySettingsToMaterial();
     }
